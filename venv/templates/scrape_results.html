@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Link Getter App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Link Getter App</h1>
+    <h2>Please enter the URL you would like to get links from in the box below.</h2>
+
+    <form action="{{ url_for('get_urls') }}" method="post">
+        <input type="url" name="user_input" placeholder="Example: https://google.com"/>
+        <br>
+        <button type="submit" id="button">Submit</button>
+    </form>
+
+    {% if links %}
+    <h2>Links found:</h2>
+    <ul>
+        {% for link in links %}
+        <li><a href="{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title> Link Getter App </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Link Getter App</h1>
+    <h2>Please enter the URL you would like to get links from in the box below.</h2>
+
+    <form action="/get_urls" method="post">
+        <input type="url" name="user_input" id = "User_url" placeholder="Example: https://google.com"/>
+        <br>
+        <button type="submit" id="button"> Submit </button>
+    </form>
+
+
+</body>
+</html>
+
